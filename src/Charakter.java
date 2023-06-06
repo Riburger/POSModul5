@@ -6,9 +6,9 @@ public class Charakter {
 
     private boolean spezialfaehigkeitAktiv;
 
-    public Charakter(String name, boolean spezialfaehigkeitAktiv) {
+    public Charakter(String name) {
         this.name = name;
-        this.spezialfaehigkeitAktiv = spezialfaehigkeitAktiv;
+        this.spezialfaehigkeitAktiv = false;
         this.lebenspunkte = 100;
     }
 
@@ -35,12 +35,18 @@ public class Charakter {
     public void setSpezialfaehigkeitAktiv(boolean spezialfaehigkeitAktiv) {
         this.spezialfaehigkeitAktiv = spezialfaehigkeitAktiv;
     }
-
-    public void schadenNehmen(int punkte){
-
+    public void spezialfaehigkeitAktivieren(){
+        this.spezialfaehigkeitAktiv = true;
     }
 
-    public void angreifen(){
+    public void spezialfaehigkeitDeaktivieren(){
+        this.spezialfaehigkeitAktiv = false;
+    }
+    public void schadenNehmen(int punkte){
+        this.lebenspunkte = lebenspunkte - punkte;
+    }
+
+    public void angreifen(Charakter gegner){
 
     }
 }
